@@ -25,7 +25,7 @@ public class OrganismController : MonoBehaviour
 
         
         RaycastHit2D hit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        Debug.Log($"LeftClick {_camera.ScreenToWorldPoint(Mouse.current.position.ReadValue())}");
+        Debug.Log($"LeftClick {_camera.ScreenToWorldPoint(Input.mousePosition)}");
 
         if (!hit.collider)
         {
@@ -47,8 +47,8 @@ public class OrganismController : MonoBehaviour
         if (!context.started || _selectedGameObject.IsUnityNull()) return;
 
         RaycastHit2D hit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        Debug.Log($"RightClick {_camera.ScreenToViewportPoint(Mouse.current.position.ReadValue())}");
+        Debug.Log($"RightClick {_camera.ScreenToViewportPoint(Input.mousePosition)}");
 
-        _selectedGameObject.transform.position = _camera.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+        _selectedGameObject.transform.position = _camera.ScreenToViewportPoint(Input.mousePosition);
     }
 }
