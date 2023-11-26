@@ -47,8 +47,8 @@ public class OrganismController : MonoBehaviour
         if (!context.started || _selectedGameObject.IsUnityNull()) return;
 
         RaycastHit2D hit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()));
-        Debug.Log($"RightClick {_camera.ScreenToViewportPoint(Input.mousePosition)}");
+        Debug.Log($"RightClick {_camera.ScreenToWorldPoint(Input.mousePosition)}");
 
-        _selectedGameObject.transform.position = _camera.ScreenToViewportPoint(Input.mousePosition);
+        _selectedGameObject.transform.position = (Vector2)_camera.ScreenToWorldPoint(Input.mousePosition);
     }
 }
