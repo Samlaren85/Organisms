@@ -1,8 +1,8 @@
 {
-    "name": "InputController",
+    "name": "PlayerInput",
     "maps": [
         {
-            "name": "MouseInput",
+            "name": "PlayerInput",
             "id": "3e2861ed-4b7a-4308-9e07-0ced114c8f10",
             "actions": [
                 {
@@ -22,6 +22,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MiddleDrag",
+                    "type": "Button",
+                    "id": "b320982f-bd24-4256-adbf-a36c6f6ae4dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WSDA",
+                    "type": "Value",
+                    "id": "5dabe99e-b7fc-4483-8b97-82ac99d14c39",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -46,6 +64,72 @@
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf0b84f1-e0f5-4c30-9d45-274f6a678ac7",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MiddleDrag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "0cf6ab03-71bc-43e4-aa84-1df45f52afc3",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSDA",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fe467f2c-5e6d-470c-a4f7-5b7e8aa0cf70",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSDA",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "ac1b8ffb-9369-4a7f-92d9-ece45c17e54d",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSDA",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "1c0a952b-a382-4a26-84e6-faa20eabecd0",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSDA",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "30560ecd-a0a0-4ac8-b65a-4aaa41db28fb",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WSDA",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
