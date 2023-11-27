@@ -1,17 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.UI.Image;
 
 public class OrganismController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 
     [SerializeField] private TextMeshProUGUI _organismInfo;
-    [SerializeField] private GameObject _selectedGameObject;
+    [SerializeField] public GameObject _selectedGameObject;
 
     public void Awake()
     {
@@ -33,6 +35,7 @@ public class OrganismController : MonoBehaviour
             {
                 _selectedGameObject = null;
                 _organismInfo.text = string.Empty;
+                _camera.GetComponent<CameraController>()._following = false;
             }
         }
         else if (hit.collider.gameObject.CompareTag("Organism"))
